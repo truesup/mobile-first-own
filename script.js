@@ -21,7 +21,7 @@ const conditions = [
 function closeAllSkills() {
   skillsData.forEach((skill) => {
     skill.btn.style.transform = 'rotate(0deg)';
-    skill.divider.style.height = '3px';
+    skill.divider.style.height = '2px';
     skill.divider.style.paddingBlock = '0px';
     skill.list.classList.add('visually-hidden');
   });
