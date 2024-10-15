@@ -1,72 +1,34 @@
 // skills
-const skillsData = [
+const sections = [
   {
     top: document.querySelector('.skills-hard-top'),
-    btn: document.getElementById('skills-hard-arrow'),
     divider: document.querySelector('.skills-hard-divider'),
-    list: document.querySelector('.skills-hard-list'),
+    button: document.querySelector('.skills-hard-button'),
   },
   {
     top: document.querySelector('.skills-soft-top'),
-    btn: document.getElementById('skills-soft-arrow'),
     divider: document.querySelector('.skills-soft-divider'),
-    list: document.querySelector('.skills-soft-list'),
+    button: document.querySelector('.skills-soft-button'),
   },
 ];
 
-const conditions = [
-  { query: '(max-width: 320px', hardHeight: '225px', softHeight: '203px' },
-  { query: '(max-width: 348px', hardHeight: '225px', softHeight: '180px' },
-  { query: '(max-width: 456px', hardHeight: '225px', softHeight: '158px' },
-];
+function toggleSection(top, divider, button) {
+  const isOpen = divider.classList.contains('open');
 
-function closeAllSkills() {
-  skillsData.forEach((skill) => {
-    skill.btn.style.transform = 'rotate(0deg)';
-    skill.divider.style.height = '2px';
-    skill.divider.style.paddingBlock = '0px';
-    skill.list.classList.add('visually-hidden');
-  });
-}
-
-function toggleSkills(skill, height) {
-  const { btn, divider, list } = skill;
-  const isOpen = btn.style.transform === 'rotate(90deg)';
-
-  closeAllSkills();
-
-  if (!isOpen) {
-    btn.style.transform = 'rotate(90deg)';
-    divider.style.height = height;
-    divider.style.paddingBlock = '8px';
-    list.classList.remove('visually-hidden');
+  if (isOpen) {
+    button.style.transform = 'rotate(0deg)';
+    divider.style.height = '2px';
+    divider.classList.remove('open');
+  } else {
+    button.style.transform = 'rotate(90deg)';
+    divider.style.height = `${divider.scrollHeight}px`;
+    divider.classList.add('open');
   }
 }
-function applyCondition(condition) {
-  skillsData[0].top.onclick = () =>
-    toggleSkills(skillsData[0], condition.hardHeight);
-  skillsData[1].top.onclick = () =>
-    toggleSkills(skillsData[1], condition.softHeight);
-}
 
-function setUpMediaQueries() {
-  conditions.forEach((condition) => {
-    const mediaQuery = window.matchMedia(condition.query);
-
-    const handleChange = () => {
-      if (mediaQuery.matches) {
-        closeAllSkills();
-        applyCondition(condition);
-      }
-    };
-
-    handleChange();
-
-    mediaQuery.addEventListener('change', handleChange);
-  });
-}
-
-window.addEventListener('load', setUpMediaQueries);
+sections.forEach(({ top, divider, button }) => {
+  top.addEventListener('click', () => toggleSection(top, divider, button));
+});
 
 // slider
 const slides = document.querySelectorAll('.slides img');

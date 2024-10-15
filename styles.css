@@ -98,12 +98,12 @@ body {
 }
 .text-big {
   font-family: var(--font-family-accent);
-  font-size: clamp(16px, 2vw, 20px);
+  font-size: clamp(16px, 4vw, 20px);
   font-weight: 800;
 }
 .text-medium {
   font-family: var(--font-family-accent);
-  font-size: clamp(15px, 2vw, 30px);
+  font-size: clamp(15px, 4vw, 30px);
   font-weight: 900;
 }
 
@@ -179,10 +179,17 @@ body {
 }
 .skills-hard-divider,
 .skills-soft-divider {
+  height: 2px;
+  overflow: hidden;
+  transition: height 0.5s ease, padding-block 0.5s ease;
   border-radius: 6px;
   background-color: var(--color-accent);
+}
+.skills-hard-divider.open,
+.skills-soft-divider.open {
+  max-height: 800px;
+  padding-block: 6px;
   overflow: hidden;
-  transition: height 0.5s ease;
 }
 .skills-hard-list,
 .skills-soft-list {
@@ -216,7 +223,9 @@ body {
   gap: 6px;
 }
 .slide {
-  width: 220px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 220px;
   height: auto;
   display: none;
   border-radius: 4px;
@@ -228,12 +237,12 @@ body {
 .slide-wrapper {
   position: relative;
 }
-.slide {
+/* .slide {
   transition: opacity 0.1s ease;
 }
 .slide-wrapper:hover .slide {
   opacity: 0.1;
-}
+} */
 .slide-title {
   position: absolute;
   top: 50%;
@@ -247,10 +256,10 @@ body {
   width: 100%;
   user-select: none;
 }
-.slide-wrapper:hover .slide-title {
+/* .slide-wrapper:hover .slide-title {
   opacity: 1;
   pointer-events: auto;
-}
+} */
 .prev,
 .next {
   padding: 0;
@@ -304,7 +313,7 @@ body {
 }
 .modal-content {
   position: relative;
-  margin: 5% auto;
+  margin: 50% auto;
   padding: 10px;
   background-color: var(--color-accent);
   width: 90%;
@@ -318,7 +327,7 @@ body {
 #modal-text {
   font-family: var(--font-family-base);
   color: var(--color-substrate);
-  font-size: 12px;
+  margin-block: 14px;
 }
 #modal-gif {
   width: 90%;
@@ -326,8 +335,7 @@ body {
 #modal-url {
   font-family: var(--font-family-accent);
   color: var(--color-substrate);
-  font-size: 12px;
-  margin-block: 16px;
+  margin-block: 14px;
 }
 #modal-url:hover {
   color: var(--color-main);
@@ -342,4 +350,8 @@ body {
 }
 .close:hover {
   color: red;
+}
+
+/* media */
+@media (min-width: 320px) {
 }
