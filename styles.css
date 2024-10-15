@@ -83,27 +83,27 @@ body {
 
 .title-big {
   font-family: var(--font-family-base);
-  font-size: clamp(26px, 7vw, 40px);
+  font-size: clamp(26px, 7vw, 38px);
   font-weight: 400;
 }
 .title-medium {
   font-family: var(--font-family-base);
-  font-size: clamp(22px, 6vw, 34px);
+  font-size: clamp(22px, 6vw, 32px);
   font-weight: 400;
 }
 .title-small {
   font-family: var(--font-family-base);
-  font-size: clamp(14px, 4vw, 24px);
+  font-size: clamp(14px, 4vw, 20px);
   font-weight: 100;
 }
 .text-big {
   font-family: var(--font-family-accent);
-  font-size: clamp(16px, 4vw, 20px);
+  font-size: clamp(16px, 4vw, 26px);
   font-weight: 800;
 }
 .text-medium {
   font-family: var(--font-family-accent);
-  font-size: clamp(15px, 4vw, 30px);
+  font-size: clamp(15px, 4vw, 26px);
   font-weight: 900;
 }
 
@@ -353,5 +353,118 @@ body {
 }
 
 /* media */
-@media (min-width: 320px) {
+@media (min-width: 400px) {
+  .header-logo {
+    width: 40px;
+  }
+  .skills-soft-button,
+  .skills-hard-button,
+  .skills-hard-button img,
+  .skills-soft-button img,
+  .prev,
+  .next,
+  .prev img,
+  .next img {
+    width: 26px;
+    aspect-ratio: 1;
+  }
+  .portfolio-slider {
+    column-gap: 10px;
+  }
+  .contacts {
+    column-gap: 24px;
+  }
+  .contact-wrapper img {
+    width: 28px;
+  }
+}
+@media (min-width: 600px) {
+  .title-big {
+    font-size: clamp(38px, 5.3vw, 44px);
+  }
+  .title-medium {
+    font-size: clamp(32px, 4.4vw, 38px);
+  }
+  .title-small {
+    font-size: clamp(20px, 2vw, 24px);
+  }
+  .text-big,
+  .text-medium {
+    font-size: clamp(26px, 2vw, 30px);
+  }
+  .header,
+  .greeting,
+  .photo,
+  .skills,
+  .portfolio,
+  .resume,
+  .contacts {
+    border-radius: 14px;
+    padding: 20px;
+  }
+  .header-logo {
+    width: 50px;
+  }
+  .photo-image {
+    width: 200px;
+  }
+  .skills-soft-button,
+  .skills-hard-button,
+  .skills-hard-button img,
+  .skills-soft-button img,
+  .prev,
+  .next,
+  .prev img,
+  .next img {
+    width: 30px;
+    aspect-ratio: 1;
+  }
+  .portfolio-slider {
+    column-gap: 18px;
+  }
+  .resume-en,
+  .resume-ru {
+    padding: 16px;
+  }
+  .resume-icon {
+    width: 26px;
+  }
+  .contacts {
+    column-gap: 30px;
+  }
+  .contact-wrapper img {
+    width: 36px;
+  }
+}
+@media (min-width: 700px) {
+  .header {
+    padding: 10px;
+  }
+  .header-logo {
+    width: 55px;
+  }
+  .title-small {
+    font-size: clamp(24px, 3vw, 26px);
+  }
+  .prev,
+  .next,
+  .prev img,
+  .next img {
+    width: 40px;
+    aspect-ratio: 1;
+  }
+  .slide {
+    border-radius: 10px;
+  }
+  .contacts {
+    column-gap: 40px;
+  }
+  .contact-wrapper img {
+    width: 40px;
+  }
+  .close {
+    font-size: 30px;
+  }
+}
+@media (min-width: 801px) {
 }
