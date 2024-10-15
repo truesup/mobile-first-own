@@ -315,26 +315,36 @@
       </section>
 
       <section class="resume">
-        <div class="resume-en">
-          <p class="resume-text title-small">Download english version of CV</p>
-          <!-- <button id="resume-en-download">Click</button> -->
+        <a
+          class="resume-en"
+          href="./cv/Resume-EN.pdf"
+          download="Merekin-Pavel-CV.pdf"
+          onclick="showDownloadedText(event)"
+        >
+          <p class="resume-text title-small">Download resume</p>
           <img
             src="./imgs/icons/cv-en.svg"
             alt="cv (eng version)"
             loading="lazy"
-            width="20"
+            width="18"
+            class="resume-icon"
           />
-        </div>
-        <hr class="resume-divider" />
-        <div class="resume-ru">
-          <p class="resume-text title-small">Загрузить резюме на русском</p>
+        </a>
+        <a
+          class="resume-ru"
+          href="./cv/Resume-RU.pdf"
+          download="Merekin-Pavel-CV.pdf"
+          onclick="showDownloadedText(event)"
+        >
+          <p class="resume-text title-small">Загрузить резюме</p>
           <img
             src="./imgs/icons/cv-ru.svg"
             alt="cv (rus version)"
             loading="lazy"
-            width="20"
+            width="18"
+            class="resume-icon"
           />
-        </div>
+        </a>
       </section>
 
       <section class="contacts">

@@ -16,6 +16,8 @@ const skillsData = [
 
 const conditions = [
   { query: '(max-width: 320px', hardHeight: '225px', softHeight: '203px' },
+  { query: '(max-width: 348px', hardHeight: '225px', softHeight: '180px' },
+  { query: '(max-width: 456px', hardHeight: '225px', softHeight: '158px' },
 ];
 
 function closeAllSkills() {
@@ -117,3 +119,33 @@ function openModal(content, gifUrl, githubUrl) {
 function closeModal() {
   modal.style.display = 'none';
 }
+
+// downloaded animation
+function showDownloadedText(event) {
+  const link = event.currentTarget;
+  const textElement = link.querySelector('.resume-text');
+  const iconElement = link.querySelector('.resume-icon');
+
+  if (textElement.innerHTML === 'Downloading...') {
+    return;
+  }
+
+  const originalText = textElement.innerHTML;
+
+  textElement.innerHTML = 'Downloading...';
+  link.style.justifyContent = 'center';
+  iconElement.classList.add('visually-hidden');
+
+  link.style.pointerEvents = 'none';
+
+  setTimeout(() => {
+    textElement.innerHTML = originalText;
+    link.style.justifyContent = 'space-between';
+    iconElement.classList.remove('visually-hidden');
+    link.style.pointerEvents = 'auto';
+  }, 3000);
+}
+
+document.querySelectorAll('.resume-en, .resume-ru').forEach((link) => {
+  link.addEventListener('click', showDownloadedText);
+});
